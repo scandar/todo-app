@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "todo-list app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scandar/todo-app.git"
+  },
+  "author": "scandar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scandar/todo-app/issues"
+  },
+  "homepage": "https://github.com/scandar/todo-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}
