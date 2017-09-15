@@ -33,12 +33,12 @@ module.exports = function (app) {
 
     app.delete('/todo/:item', function (req, res) {
 
-        Todo.find({item: req.params.item.replace(/\-/g, " ")})
+        Todo.findOne({item: req.params.item.replace(/\-/g, " ")})
         .remove(function (err,data) {
             if (err) throw err;
             res.json(data);
         });
-        
+
     });
 
 };

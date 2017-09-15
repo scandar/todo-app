@@ -4,13 +4,16 @@ $(document).ready(function(){
       var item = $('form input');
       var todo = {item: item.val()};
 
+
       $.ajax({
         type: 'POST',
         url: '/todo',
         data: todo,
         success: function(data){
-          //do something with the data via front-end framework
-          location.reload();
+          // append item value to list
+          $('ul').append(`<li>${item.val()}</li>`);
+          // empty input field
+          $('form input').val('');
         }
       });
 
@@ -19,13 +22,14 @@ $(document).ready(function(){
   });
 
   $('li').on('click', function(){
+      var li = $(this);
       var item = $(this).text().replace(/ /g, "-");
       $.ajax({
         type: 'DELETE',
         url: '/todo/' + item,
         success: function(data){
-          //do something with the data via front-end framework
-          location.reload();
+            // remove item from list
+            li.remove();
         }
       });
   });
